@@ -1,0 +1,14 @@
+## Bun/Express/PostgreSQL Boilerplate
+
+This is a boilerplate for a simple Bun-powered Express.js API and a Dockerized postgreSQL database.
+
+Without Typescript.
+
+# Running the API:
+You will need Docker installed. Also login on your command line.
+```Docker login```
+
+You will need an .env in this project, so configure that. Feel free to use the example though for just checking it out.
+
+Then you're gonna slam these down in your command line:
+- ```docker-compose up -d```
