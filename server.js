@@ -21,9 +21,9 @@ initDatabase()
   .catch((error) => console.error('Error initializing database:', error))
   .finally(() => db.$client.end());
 
-  serve({
-    port: process.env.PORT || 3000,
-    fetch(request) {
-        return new Response(`Server running on port ${process.env.PORT}`);
-    },
+serve({
+  port: process.env.PORT || 3000,
+  fetch(request) {
+      return new Response(`Server running on port ${process.env.PORT}`);
+  },
 });
