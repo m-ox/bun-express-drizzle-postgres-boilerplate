@@ -8,18 +8,24 @@ import { serve } from 'bun';
 dotenv.config();
 
 const app = express();
+      app.use(cors());
 
 if (!process.env.DB_URL) {
   console.error('ERROR: Invalid DB_URL. Please check your .env file.');
   process.exit(1);
 }
 
-app.use(cors());
+async function startServer() {
+  try {
+    await initDatabase(db);
+    console.log('Database initialized successfully');
+  } catch (error) {
+    console.error('Error initializing database:', error);
+    process.exit(1);
+  }
+};
 
-initDatabase()
-  .then(() => console.log('Database initialized.'))
-  .catch((error) => console.error('Error initializing database:', error))
-  .finally(() => db.$client.end());
+startServer();
 
 serve({
   port: process.env.PORT || 3000,
