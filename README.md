@@ -17,3 +17,10 @@ Feel free to review your logs once this works out:
 - ```docker-compose logs -f```
 
 When you spin up the project, you can review that a simple boilerplate schema and user table with ids has been generated. Tool around with from there if you want more tables and columns.
+
+# Plans for this boilerplate:
+- Command and functionality for seeding the db (ex. 'bun run seed')
+- Drizzle migration script (ex. 'bun run migrate')
+- ESLint set up
+- Open API v3
+- Test suite and folder structure set up
